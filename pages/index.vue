@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  const name = '수진'
+  import Header from '~/components/common/Header.vue'
 </script>
 
 <template>
   <div>
-    나는 {{name}}이다.
+    <Header />
   </div>
 </template>
