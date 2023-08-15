@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <header class="flex justify-between px-8 pt-10 text-gray-200">
+  <header class="flex justify-between px-8 pt-10 pb-6 text-gray-200">
     <ul class="flex gap-4">
       <li v-for="navigation in navigations" :key="navigation.name" class="flex items-center justify-center h-10 p-2 cursor-pointer">
         {{ navigation.name }}
@@ -18,7 +18,7 @@
     </ul>
 
     <button>
-      <VueFeather type="menu" ></VueFeather>
+      <VueFeather type="menu"></VueFeather>
     </button>
   </header>
 </template>
