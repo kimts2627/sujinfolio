@@ -44,25 +44,22 @@ export default function Home() {
   };
 
   return (
-    <>
-      <Header />
-      <main className="flex justify-center">
-        <ul className="flex gap-2 w-full max-w-7xl h-preview">
-          {previewCards.map((card) => (
-            <li
-              className="flex-1 h-full overflow-hidden hover-animation cursor-pointer"
-              onClick={() => handleCardClick(card.id)}
-              key={card.id}
-            >
-              <Image
-                src={card.src}
-                alt={card.title + " preview"}
-                className={`w-full h-full object-cover object-position-${card.id}`}
-              />
-            </li>
-          ))}
-        </ul>
-      </main>
-    </>
+    <main className="flex justify-center">
+      <ul className="flex gap-2 w-full h-full">
+        {previewCards.map((card) => (
+          <li
+            className="flex-1 h-full overflow-hidden hover-animation cursor-pointer"
+            onClick={() => handleCardClick(card.id)}
+            key={card.id}
+          >
+            <Image
+              src={card.src}
+              alt={card.title + " preview"}
+              className={`w-full h-full object-cover object-position-${card.id}`}
+            />
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
