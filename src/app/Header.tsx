@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex flex-col justify-between px-8 pt-10 pb-6 w-80 text-gray-900 font-extralight">
+    <header className="relative flex flex-col justify-between px-8 pt-10 pb-6 w-80 text-gray-900 font-extralight overflow-hidden">
       <ul className="flex w-full gap-4">
         {navigations.map((nav) => (
           <li
@@ -42,6 +42,8 @@ const Header = () => {
           </li>
         ))}
       </ul>
+
+      <h1 className="text-9xl font-bold -rotate-45 scale-150">ZIMI</h1>
 
       <div className="flex gap-3">
         {socialNetworks.map((socialNetwork) => (
