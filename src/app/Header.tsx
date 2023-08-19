@@ -35,7 +35,7 @@ const Header = () => {
         {navigations.map((nav) => (
           <li
             key={nav.name}
-            className="flex items-center justify-center h-10 p-2 cursor-pointer"
+            className="flex items-center justify-center h-10 p-2 cursor-pointer border-solid hover:border-b border-black"
             onClick={() => handleNavClick(nav.href)}
           >
             {nav.name}
@@ -52,7 +52,9 @@ const Header = () => {
             href={socialNetwork.href}
             key={socialNetwork.name}
           >
-            <button className="p2 text-2xl">{socialNetwork.element}</button>
+            <button className="p2 text-2xl hover:scale-105">
+              {socialNetwork.element}
+            </button>
           </Link>
         ))}
       </div>
