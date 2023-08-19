@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Download from "yet-another-react-lightbox/plugins/download";
-
 import "yet-another-react-lightbox/styles.css";
+
+import TextTransition, { presets } from "react-text-transition";
 
 import NextJsImage from "./components/NextJsImage";
 
@@ -16,6 +17,17 @@ import demoImage from "public/images/heavy.jpeg";
 export default function GalleryDetail() {
   const [openViewer, setOpenViewer] = useState(false);
   const [viewerGuide, setViewViewerGuide] = useState(false);
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  const demoTitles = ["까마귀와 두루미", "Raven and Crane"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((titleIndex) => titleIndex + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -44,8 +56,12 @@ export default function GalleryDetail() {
 
         <div className="flex flex-col gap-10 px-6">
           <div className="flex items-end">
-            <h1 className="text-6xl">까마귀와 두루미</h1>
-            <div className="flex-1 border-solid border-b-2 h-full w-full border-primary" />
+            <h1 className="text-6xl">
+              <TextTransition springConfig={presets.wobbly}>
+                {demoTitles[titleIndex % demoTitles.length]}
+              </TextTransition>
+            </h1>
+            {/* <div className="flex-1 border-solid border-b-2 h-full w-full border-primary" /> */}
           </div>
           <p className="text-lg text-gray-500" lang="ko">
             법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은
