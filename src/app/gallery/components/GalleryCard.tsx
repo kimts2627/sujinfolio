@@ -23,7 +23,9 @@ const GalleryCard = () => {
     >
       <div className="flex flex-col justify-between flex-1 py-2 font-extralight">
         <div className="flex flex-col gap-5">
-          <h2 className="text-5xl">까마귀와 두루미</h2>
+          <h2 className={`text-5xl ${!isHover && "text-primary"}`}>
+            까마귀와 두루미
+          </h2>
           <p className="hypens-manual" lang="ko">
             정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을
             편성하여 국회에 제출할 수 있다. 국민경제자문회의의 조직·직무범위
@@ -36,9 +38,13 @@ const GalleryCard = () => {
               isHover ? "w-3/5" : "w-1/2"
             } ease-in-out duration-100`}
           >
-            <div className={`h-2px w-full bg-${isHover ? "white" : "black"}`} />
+            <div
+              className={`h-2px w-full ${isHover ? "bg-primary" : "bg-black"}`}
+            />
             행복 | 유머 | 깔깔
-            <div className={`h-2px w-full bg-${isHover ? "white" : "black"}`} />
+            <div
+              className={`h-2px w-full ${isHover ? "bg-primary" : "bg-black"}`}
+            />
           </div>
         </div>
 

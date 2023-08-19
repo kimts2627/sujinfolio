@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="relative flex flex-col justify-between px-8 pt-10 pb-6 w-80 text-gray-900 font-extralight overflow-hidden">
+    <header className="relative flex flex-col justify-between h-full px-8 pt-10 pb-6 w-80 text-gray-900 font-extralight overflow-hidden">
       <ul className="flex w-full gap-4">
         {navigations.map((nav) => (
           <li

@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/app/Header";
+import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -11,6 +11,7 @@ import dummy4 from "public/images/dummy_4.jpeg";
 
 export default function Home() {
   const router = useRouter();
+  const [highlightIndex, setHighlightIndex] = useState(0);
 
   const previewCards = [
     {
@@ -44,18 +45,24 @@ export default function Home() {
   };
 
   return (
-    <main className="flex justify-center w-96 h-full">
+    <main className="flex justify-center w-full h-full">
       <ul className="flex gap-2 w-full h-full">
-        {previewCards.map((card) => (
+        {previewCards.map((card, index) => (
           <li
-            className="flex-1 h-full overflow-hidden hover-animation cursor-pointer"
+            className={`h-full overflow-hidden cursor-pointer ease-in-out duration-700 ${
+              highlightIndex === index
+                ? "brightness-100"
+                : "flex-1 brightness-50"
+            }`}
             onClick={() => handleCardClick(card.id)}
+            onMouseEnter={() => setHighlightIndex(index)}
             key={card.id}
           >
             <Image
               src={card.src}
               alt={card.title + " preview"}
               className={`w-full h-full object-cover object-position-${card.id}`}
+              objectFit="cover"
             />
           </li>
         ))}
