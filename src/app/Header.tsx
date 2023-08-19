@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between px-8 pt-10 pb-6 text-gray-200">
+    <header className="flex justify-between px-8 pt-10 pb-6 w-80 text-gray-900 font-extralight">
       <ul className="flex w-full gap-4">
         {navigations.map((nav) => (
           <li

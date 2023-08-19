@@ -44,7 +44,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex justify-center">
+    <main className="flex justify-center w-96 h-full">
       <ul className="flex gap-2 w-full h-full">
         {previewCards.map((card) => (
           <li

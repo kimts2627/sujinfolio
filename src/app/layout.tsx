@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex h-screen w-screen ">
+        <div className="flex h-screen w-screen bg-white">
           <Header />
-          <div className="p-20">{children}</div>
+          <div className="px-8 py-4">{children}</div>
         </div>
       </body>
     </html>
