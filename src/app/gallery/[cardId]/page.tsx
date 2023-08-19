@@ -17,8 +17,34 @@ export default function GalleryDetail() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <main>
-        <Image src={demoImage} alt="demo image" onClick={() => setOpen(true)} />
+      <main className="flex flex-1 flex-col gap-8 w-full border-y border-solid border-black min-h-full">
+        <div>
+          <Image
+            src={demoImage}
+            alt="demo image"
+            onClick={() => setOpen(true)}
+          />
+          <div className="w-full h-px bg-black" />
+        </div>
+
+        <div className="flex flex-col gap-10 px-6">
+          <h1 className="text-6xl">까마귀와 두루미</h1>
+          <p className="text-lg" lang="ko">
+            법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은
+            헌법재판소에 제청하여 그 심판에 의하여 재판한다. 국가는 모성의
+            보호를 위하여 노력하여야 한다. 국민의 자유와 권리는 헌법에 열거되지
+            아니한 이유로 경시되지 아니한다. 모든 국민은 자기의 행위가 아닌
+            친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 의원을
+            제명하려면 국회재적의원 3분의 2 이상의 찬성이 있어야 한다.
+            헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차,
+            내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 대법관은
+            대법원장의 제청으로 국회의 동의를 얻어 대통령이 임명한다.
+            언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지
+            아니한다. 법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는
+            파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타
+            불리한 처분을 받지 아니한다.
+          </p>
+        </div>
       </main>
 
       <Lightbox
