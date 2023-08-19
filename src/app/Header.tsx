@@ -43,7 +43,9 @@ const Header = () => {
         ))}
       </ul>
 
-      <h1 className="text-9xl font-bold -rotate-45 scale-150">ZIMI</h1>
+      <h1 className="text-9xl font-bold -rotate-45 scale-150">
+        ZIM<span className="text-primary">I</span>
+      </h1>
 
       <div className="flex gap-3">
         {socialNetworks.map((socialNetwork) => (

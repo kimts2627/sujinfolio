@@ -14,22 +14,40 @@ import NextJsImage from "./components/NextJsImage";
 import demoImage from "public/images/heavy.jpeg";
 
 export default function GalleryDetail() {
-  const [open, setOpen] = useState(false);
+  const [openViewer, setOpenViewer] = useState(false);
+  const [viewerGuide, setViewViewerGuide] = useState(false);
+
   return (
     <>
-      <main className="flex flex-1 flex-col gap-8 w-full border-y border-solid border-black min-h-full">
+      <main className="flex flex-1 flex-col gap-8 w-full border-y border-solid border-black min-h-full pb-6">
         <div>
-          <Image
-            src={demoImage}
-            alt="demo image"
-            onClick={() => setOpen(true)}
-          />
+          <div
+            className="relative cursor-pointer"
+            onMouseEnter={() => setViewViewerGuide(true)}
+            onMouseLeave={() => setViewViewerGuide(false)}
+            onClick={() => setOpenViewer(true)}
+          >
+            <div
+              className={`absolute flex items-center justify-center w-full h-full bg-gray-700 ${
+                viewerGuide ? "opacity-70" : "opacity-0"
+              } ease-in-out duration-300`}
+            >
+              <h2 className="text-white text-2xl font-extralight">
+                자세히 보기
+              </h2>
+            </div>
+
+            <Image src={demoImage} alt="demo image" />
+          </div>
           <div className="w-full h-px bg-black" />
         </div>
 
         <div className="flex flex-col gap-10 px-6">
-          <h1 className="text-6xl">까마귀와 두루미</h1>
-          <p className="text-lg" lang="ko">
+          <div className="flex items-end">
+            <h1 className="text-6xl">까마귀와 두루미</h1>
+            <div className="flex-1 border-solid border-b-2 h-full w-full border-primary" />
+          </div>
+          <p className="text-lg text-gray-500" lang="ko">
             법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은
             헌법재판소에 제청하여 그 심판에 의하여 재판한다. 국가는 모성의
             보호를 위하여 노력하여야 한다. 국민의 자유와 권리는 헌법에 열거되지
@@ -48,8 +66,8 @@ export default function GalleryDetail() {
       </main>
 
       <Lightbox
-        open={open}
-        close={() => setOpen(false)}
+        open={openViewer}
+        close={() => setOpenViewer(false)}
         slides={[demoImage]}
         render={{ slide: NextJsImage }}
         plugins={[Zoom, Download]}

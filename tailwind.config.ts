@@ -17,6 +17,9 @@ const config: Config = {
         100: "30rem",
         "2px": "2px",
       },
+      colors: {
+        primary: "rgb(255,99,55)",
+      },
     },
   },
   plugins: [],
