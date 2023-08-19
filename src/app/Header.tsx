@@ -1,13 +1,28 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { RxInstagramLogo } from "react-icons/rx";
+import { LiaArtstation } from "react-icons/lia";
+import Link from "next/link";
 
 const Header = () => {
   const router = useRouter();
   const navigations = [
     { name: "Home", href: "/" },
-    { name: "About Me", href: "/about" },
     { name: "Gallery", href: "/gallery" },
+  ];
+
+  const socialNetworks = [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/zimi_ss",
+      element: <RxInstagramLogo />,
+    },
+    {
+      name: "Artstation",
+      href: "https://www.artstation.com/mumu00",
+      element: <LiaArtstation />,
+    },
   ];
 
   const handleNavClick = (path: string) => {
@@ -15,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between px-8 pt-10 pb-6 w-80 text-gray-900 font-extralight">
+    <header className="flex flex-col justify-between px-8 pt-10 pb-6 w-80 text-gray-900 font-extralight">
       <ul className="flex w-full gap-4">
         {navigations.map((nav) => (
           <li
@@ -28,7 +43,17 @@ const Header = () => {
         ))}
       </ul>
 
-      <button></button>
+      <div className="flex gap-3">
+        {socialNetworks.map((socialNetwork) => (
+          <Link
+            target="_blank"
+            href={socialNetwork.href}
+            key={socialNetwork.name}
+          >
+            <button className="p2 text-2xl">{socialNetwork.element}</button>
+          </Link>
+        ))}
+      </div>
     </header>
   );
 };
