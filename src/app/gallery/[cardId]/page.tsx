@@ -87,9 +87,6 @@ export default function GalleryDetail() {
         slides={[demoImage]}
         render={{ slide: NextJsImage }}
         plugins={[Zoom, Download]}
-        buttonPrev={null}
-        buttonNext={null}
-        iconNext={null}
       />
     </>
   );

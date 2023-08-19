@@ -4,12 +4,9 @@ import {
   isImageSlide,
   useLightboxProps,
   Slide,
+  SlideImage,
+  RenderSlideProps,
 } from "yet-another-react-lightbox";
-
-type NextJsImageProps = {
-  slide: Slide;
-  rect: DOMRect;
-};
 
 const isNextJsImage = (slide: Slide) => {
   return (
@@ -19,11 +16,11 @@ const isNextJsImage = (slide: Slide) => {
   );
 };
 
-const NextJsImage = ({ slide, rect }: NextJsImageProps) => {
+const NextJsImage = ({ slide, rect }: RenderSlideProps<SlideImage>) => {
   const { imageFit } = useLightboxProps().carousel;
   const cover = isImageSlide(slide) && isImageFitCover(slide, imageFit);
 
-  if (!isNextJsImage(slide)) return undefined;
+  if (!isNextJsImage(slide)) return <></>;
 
   const width = !cover
     ? Math.round(
@@ -48,7 +45,8 @@ const NextJsImage = ({ slide, rect }: NextJsImageProps) => {
       <Image
         fill
         alt=""
-        src={slide}
+        src={slide.src}
+        blurDataURL={slide.src}
         loading="eager"
         draggable={false}
         placeholder={"blur"}
