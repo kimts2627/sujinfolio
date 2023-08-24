@@ -20,6 +20,9 @@ const config: Config = {
       colors: {
         primary: "rgb(255,99,55)",
       },
+      maxWidth: {
+        "8xl": "1600px",
+      },
     },
   },
   plugins: [],
