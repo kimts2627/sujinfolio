@@ -29,7 +29,7 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       onClick={handleCardClick}
-      className="flex gap-10 justify-between px-6 py-4 w-full h-96 cursor-pointer hover:bg-black hover:text-white ease-in-out duration-200"
+      className="flex gap-10 justify-between px-6 py-4 w-full h-96 cursor-pointer hover:bg-gray-500 hover:text-white ease-in-out duration-200"
     >
       <div className="flex flex-col justify-between flex-1 py-2 font-extralight">
         <div className="flex flex-col gap-5">
