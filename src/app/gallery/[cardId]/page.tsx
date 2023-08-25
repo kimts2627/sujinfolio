@@ -38,9 +38,19 @@ export default function GalleryDetail({
 
   const tags = currentCard?.tags ?? [];
 
-  const detailImage = [
-    { src: IMAGE_BASE_PATH + currentCard?.images.full ?? "" },
-  ];
+  const previewImage =
+    typeof currentCard?.images.normal === "string"
+      ? [IMAGE_BASE_PATH + currentCard?.images.normal ?? ""]
+      : currentCard?.images.normal.map(
+          (imagePath) => IMAGE_BASE_PATH + imagePath
+        ) ?? [];
+
+  const detailImage =
+    typeof currentCard?.images.full === "string"
+      ? [{ src: IMAGE_BASE_PATH + currentCard?.images.full ?? "" }]
+      : currentCard?.images.full.map((imagePath) => ({
+          src: IMAGE_BASE_PATH + imagePath,
+        })) ?? [];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -73,7 +83,7 @@ export default function GalleryDetail({
             </div>
 
             <Image
-              src={IMAGE_BASE_PATH + currentCard?.images.normal ?? ""}
+              src={previewImage[0]}
               objectFit="cover"
               width={1280}
               height={720}

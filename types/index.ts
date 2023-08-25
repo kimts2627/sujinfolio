@@ -8,7 +8,7 @@ export interface Card {
 
 type CardImages = {
   vertical?: string;
-  thumnail: string;
-  normal: string;
-  full: string;
+  thumnail: string | string[];
+  normal: string | string[];
+  full: string | string[];
 };

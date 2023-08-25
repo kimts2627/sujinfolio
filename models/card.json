@@ -38,9 +38,9 @@
     "description": "장난스러운 인상의 그녀는 이 버려진 땅에 유일한 활력이 넘치는 존재.\n자기 몸집보다 커다랗고 우스꽝스러워 보이는 무기를 지니고 다니며 그 모습은 마치 악어를 닮아있다.\n외로운 무색의 땅에서 혓바닥이 달린 조그만 동료는 항상 그녀의 곁을 외롭지 않게 지키며 함께 색을 뿌리고 다닌다.\n\n주변의 환경과 어울리도록 쇳덩이나 가죽등의 재료로 직접 만든 듯한 의상와 무기를 표현했다.\n생기와 활력이 잘 느껴지도록 다양한 색감을 사용했으며 키치한 무드의 스티커도 여럿 붙여놓았다.",
     "tags": ["디스토피아", "생기"],
     "images": {
-      "thumnail": "/graffiter_thumnail.webp",
-      "normal": "/graffiter.webp",
-      "full": "/graffiter.png"
+      "thumnail": ["/graffiter_thumnail.webp", "/graffiter_2_thumnail.webp"],
+      "normal": ["/graffiter.webp", "/graffiter_2.webp"],
+      "full": ["/graffiter.png", "/graffiter_2.png"]
     }
   },
   {
