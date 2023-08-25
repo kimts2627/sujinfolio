@@ -36,6 +36,8 @@ export default function GalleryDetail({
       ? [currentCard?.title]
       : currentCard?.title ?? [];
 
+  const tags = currentCard?.tags ?? [];
+
   const detailImage = [
     { src: IMAGE_BASE_PATH + currentCard?.images.full ?? "" },
   ];
@@ -89,7 +91,19 @@ export default function GalleryDetail({
               </TextTransition>
             </h1>
           </div>
-          <p className="text-lg text-gray-500" lang="ko">
+
+          <div className="flex gap-2">
+            {tags.map((tag) => (
+              <span
+                className="px-3 py-1 rounded-full border-primary border-2 border-solid text-gray-600"
+                key={tag}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <p className="text-lg text-gray-500 whitespace-pre-line" lang="ko">
             {currentCard?.description ?? ""}
           </p>
         </div>
