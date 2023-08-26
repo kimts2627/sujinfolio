@@ -88,15 +88,20 @@ export default function GalleryDetail({
               </h2>
             </div>
 
-            <Image
-              src={previewImage[0]}
-              objectFit="cover"
-              width={1280}
-              height={720}
-              alt="preview image"
-            />
+            {previewImage.map((image, index) => (
+              <>
+                <Image
+                  key={image}
+                  src={previewImage[index]}
+                  objectFit="cover"
+                  width={1280}
+                  height={720}
+                  alt={"preview image" + "_" + index}
+                />
+                <div className="w-full h-px bg-black" />
+              </>
+            ))}
           </div>
-          <div className="w-full h-px bg-black" />
         </div>
 
         <div className="flex flex-col gap-10 px-6">
