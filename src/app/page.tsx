@@ -13,7 +13,7 @@ export default function Home() {
   const router = useRouter();
   const [highlightIndex, setHighlightIndex] = useState(0);
 
-  const previewCards: Card[] = cards.slice(0, 5);
+  const previewCards: Card[] = cards.slice(0, 5) as Card[];
 
   const handleCardClick = (cardId: number) => {
     router.push(`/gallery/${cardId}`);
@@ -34,7 +34,7 @@ export default function Home() {
             key={card.id}
           >
             <Image
-              src={(IMAGE_BASE_PATH + card.images.vertical) as string}
+              src={(IMAGE_BASE_PATH + card.images?.vertical) as string}
               alt={card.title + " preview"}
               className={`w-full h-full object-cover `}
               width={350}

@@ -58,5 +58,23 @@
       "full": "/butterfly.png",
       "vertical": "/butterfly_vertical.png"
     }
+  },
+  {
+    "id": 6,
+    "title": ["스파인 프로젝트", "Spine Project"],
+    "description": "...",
+    "tags": ["Spine"],
+    "spineImages": {
+      "hedgehog": ["/idle.gif", "/walk.gif", "/attack.gif" ],
+      "sparrow": ["/idle.gif", "/walk.gif", "/attack.gif" ],
+      "eagle": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "elephant": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "gorilla": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "treeleader": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "chui": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "flameminister": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "biyo": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "dokkebiking": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ]
+    }
   }
 ]

@@ -12,6 +12,7 @@ import TextTransition, { presets } from "react-text-transition";
 
 import cards from "../../../../models/card.json";
 import type { Card } from "../../../../types";
+import SpineProjectView from "./components/SpineProjectView";
 
 const IMAGE_BASE_PATH = "/images";
 
@@ -39,18 +40,20 @@ export default function GalleryDetail({
   const tags = currentCard?.tags ?? [];
 
   const previewImage =
-    typeof currentCard?.images.normal === "string"
+    typeof currentCard?.images?.normal === "string"
       ? [IMAGE_BASE_PATH + currentCard?.images.normal ?? ""]
-      : currentCard?.images.normal.map(
+      : currentCard?.images?.normal.map(
           (imagePath) => IMAGE_BASE_PATH + imagePath
         ) ?? [];
 
   const detailImage =
-    typeof currentCard?.images.full === "string"
+    typeof currentCard?.images?.full === "string"
       ? [{ src: IMAGE_BASE_PATH + currentCard?.images.full ?? "" }]
-      : currentCard?.images.full.map((imagePath) => ({
+      : currentCard?.images?.full.map((imagePath) => ({
           src: IMAGE_BASE_PATH + imagePath,
         })) ?? [];
+
+  const isSpineProject = currentCard?.id === 6;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,6 +64,9 @@ export default function GalleryDetail({
   }, []);
 
   if (!currentCard) return null;
+
+  if (isSpineProject)
+    return <SpineProjectView spineCard={currentCard} titleIndex={titleIndex} />;
 
   return (
     <>

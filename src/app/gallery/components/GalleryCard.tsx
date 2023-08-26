@@ -13,18 +13,24 @@ type GalleryCardProps = {
 };
 
 const IMAGE_BASE_PATH = "/images";
+const SPINE_IMAGE_BASE_PATH = "/images/spine";
 
 const GalleryCard = ({ card }: GalleryCardProps) => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
 
+  const isSpineProject = card.id === 6;
+
   const cardTitle = typeof card.title === "string" ? card.title : card.title[0];
 
   const thumnailImage =
-    typeof card?.images.normal === "string"
+    typeof card?.images?.normal === "string"
       ? [IMAGE_BASE_PATH + card?.images.thumnail ?? ""]
-      : card?.images.normal.map((imagePath) => IMAGE_BASE_PATH + imagePath) ??
+      : card?.images?.normal.map((imagePath) => IMAGE_BASE_PATH + imagePath) ??
         [];
+
+  const spineThumnail =
+    SPINE_IMAGE_BASE_PATH + "/elephant" + (card.spineImages?.chui?.[1] ?? "");
 
   const tagText = card.tags.join(" | ");
 
@@ -72,7 +78,7 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
       <div className="relative rounded-md overflow-hidden w-1/2 h-full">
         <Image
           className={isHover ? "scale-105 ease-in-out duration-200" : ""}
-          src={thumnailImage[0]}
+          src={isSpineProject ? spineThumnail : thumnailImage[0]}
           alt="thumnail image"
           objectFit="cover"
           fill
