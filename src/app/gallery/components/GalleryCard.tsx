@@ -42,7 +42,7 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
           <h2 className={`text-5xl ${!isHover && "text-primary"}`}>
             {cardTitle}
           </h2>
-          <p className="hypens-manual" lang="ko">
+          <p className="ellipsis-text" lang="ko">
             {card.description}
           </p>
           <div
