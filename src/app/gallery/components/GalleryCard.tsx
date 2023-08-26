@@ -24,10 +24,11 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
   const cardTitle = typeof card.title === "string" ? card.title : card.title[0];
 
   const thumnailImage =
-    typeof card?.images?.normal === "string"
+    typeof card?.images?.thumnail === "string"
       ? [IMAGE_BASE_PATH + card?.images.thumnail ?? ""]
-      : card?.images?.normal.map((imagePath) => IMAGE_BASE_PATH + imagePath) ??
-        [];
+      : card?.images?.thumnail.map(
+          (imagePath) => IMAGE_BASE_PATH + imagePath
+        ) ?? [];
 
   const spineThumnail =
     SPINE_IMAGE_BASE_PATH + "/elephant" + (card.spineImages?.chui?.[1] ?? "");
