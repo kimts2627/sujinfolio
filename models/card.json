@@ -67,9 +67,9 @@
     "spineImages": {
       "hedgehog": ["/idle.gif", "/walk.gif", "/attack.gif" ],
       "sparrow": ["/idle.gif", "/walk.gif", "/attack.gif" ],
+      "gorilla": ["/idle.gif", "/walk.gif", "/attack.gif" ],
       "eagle": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
       "elephant": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
-      "gorilla": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
       "treeleader": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
       "chui": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
       "flameminister": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],

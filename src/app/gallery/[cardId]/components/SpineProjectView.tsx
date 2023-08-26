@@ -56,22 +56,27 @@ const SpineProjectView = ({ spineCard, titleIndex }: SpineProjectViewProps) => {
         <div className="flex items-center justify-center">
           <div className="flex flex-col gap-60 p-10">
             {spineModelKeys.map((model) => (
-              <ul
-                key={model}
-                className="flex items-center justify-between h-80"
-              >
-                {spineCard?.spineImages?.[model]?.map((image, index) => (
-                  <li
-                    key={model + "_" + index}
-                    className="flex items-end h-full"
-                  >
-                    <img
-                      src={SPINE_IMAGE_BASE_PATH + "/" + model + image}
-                      alt="spine image"
-                    />
-                  </li>
-                ))}
-              </ul>
+              <div key={model}>
+                <div>
+                  <h2 className="text-gray-900 font-semibold text-xl">
+                    {model}
+                  </h2>
+                  <div className="border-b-2 border-primary border-solid" />
+                </div>
+                <ul className="flex items-end justify-between h-max">
+                  {spineCard?.spineImages?.[model]?.map((image, index) => (
+                    <li
+                      key={model + "_" + index}
+                      className="flex flex-col items-end justify-end h-full"
+                    >
+                      <img
+                        src={SPINE_IMAGE_BASE_PATH + "/" + model + image}
+                        alt="spine image"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
