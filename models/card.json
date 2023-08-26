@@ -7,7 +7,8 @@
     "images": {
       "thumnail": "/lizard_thumnail.webp",
       "normal": "/lizard.webp",
-      "full": "/lizard.png"
+      "full": "/lizard.png",
+      "vertical": "/lizard_vertical.png"
     }
   },
   {
@@ -18,7 +19,8 @@
     "images": {
       "thumnail": "/rose_thumnail.webp",
       "normal": "/rose.webp",
-      "full": "/rose.png"
+      "full": "/rose.png",
+      "vertical": "/rose_vertical.png"
     }
   },
   {
@@ -29,7 +31,8 @@
     "images": {
       "thumnail": "/space_thumnail.webp",
       "normal": "/space.webp",
-      "full": "/space.png"
+      "full": "/space.png",
+      "vertical": "/space_vertical.png"
     }
   },
   {
@@ -40,7 +43,8 @@
     "images": {
       "thumnail": ["/graffiter_thumnail.webp", "/graffiter_2_thumnail.webp"],
       "normal": ["/graffiter.webp", "/graffiter_2.webp"],
-      "full": ["/graffiter.png", "/graffiter_2.png"]
+      "full": ["/graffiter.png", "/graffiter_2.png"],
+      "vertical": "/graffiter_vertical.png"
     }
   },
   {
@@ -51,7 +55,8 @@
     "images": {
       "thumnail": "/butterfly_thumnail.webp",
       "normal": "/butterfly.webp",
-      "full": "/butterfly.png"
+      "full": "/butterfly.png",
+      "vertical": "/butterfly_vertical.png"
     }
   }
 ]
