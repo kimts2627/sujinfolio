@@ -26,6 +26,8 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
       : card?.images.normal.map((imagePath) => IMAGE_BASE_PATH + imagePath) ??
         [];
 
+  const tagText = card.tags.join(" | ");
+
   const handleCardClick = () => {
     router.push(`/gallery/${card.id}`);
   };
@@ -53,7 +55,7 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
             <div
               className={`h-2px w-full ${isHover ? "bg-primary" : "bg-black"}`}
             />
-            행복 | 유머 | 깔깔
+            {tagText}
             <div
               className={`h-2px w-full ${isHover ? "bg-primary" : "bg-black"}`}
             />
