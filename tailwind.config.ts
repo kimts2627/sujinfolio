@@ -23,6 +23,9 @@ const config: Config = {
       maxWidth: {
         "8xl": "1600px",
       },
+      maxHeight: {
+        1000: "1000px",
+      },
     },
   },
   plugins: [],

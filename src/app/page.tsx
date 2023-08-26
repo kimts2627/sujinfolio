@@ -20,8 +20,8 @@ export default function Home() {
   };
 
   return (
-    <main className="flex justify-center w-full h-full">
-      <ul className="flex gap-5 w-full h-full">
+    <main className="flex justify-center items-center w-full h-full">
+      <ul className="flex gap-5 w-full h-full max-h-1000">
         {previewCards.map((card, index) => (
           <li
             className={`h-full overflow-hidden cursor-pointer ease-in-out duration-0 ${
