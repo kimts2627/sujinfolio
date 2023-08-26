@@ -23,6 +23,10 @@ const SpineProjectView = ({ spineCard, titleIndex }: SpineProjectViewProps) => {
     spineCard?.spineImages as Record<string, string[]>
   );
 
+  const getFirstLetterUpperCase = (text: string) => {
+    return text[0].toUpperCase() + text.slice(1);
+  };
+
   return (
     <main className="flex flex-1 flex-col gap-8 w-full border-y border-solid border-black min-h-full pb-6">
       <div className="flex flex-col gap-10 px-6 py-6">
@@ -59,7 +63,7 @@ const SpineProjectView = ({ spineCard, titleIndex }: SpineProjectViewProps) => {
               <div key={model}>
                 <div>
                   <h2 className="text-gray-900 font-semibold text-xl">
-                    {model}
+                    {getFirstLetterUpperCase(model)}
                   </h2>
                   <div className="border-b-2 border-primary border-solid" />
                 </div>
