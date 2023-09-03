@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 import Header from "./Header";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
           <div className="h-full w-px bg-black" />
           <div className="flex-1 pt-10 pb-6 overflow-auto">{children}</div>
         </div>
+        <Analytics />
       </body>
     </html>
   );
