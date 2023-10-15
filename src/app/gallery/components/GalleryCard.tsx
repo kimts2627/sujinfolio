@@ -19,7 +19,8 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
 
-  const isSpineProject = card.id === 6;
+  // TODO: 동적으로 판별 하도록 수정
+  const isSpineProject = card.id === 7;
 
   const cardTitle = typeof card.title === "string" ? card.title : card.title[1];
 
@@ -30,8 +31,9 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
           (imagePath) => IMAGE_BASE_PATH + imagePath
         ) ?? [];
 
-  const spineThumnail =
-    SPINE_IMAGE_BASE_PATH + "/elephant" + (card.spineImages?.chui?.[1] ?? "");
+  const spineThumnail = [SPINE_IMAGE_BASE_PATH + "/elephant/walk.gif"];
+
+  console.log(isSpineProject ? spineThumnail : thumnailImage);
 
   const tagText = card.tags.join(" | ");
 
@@ -79,7 +81,7 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
       <div className="relative rounded-md overflow-hidden w-1/2 h-full">
         <Image
           className={isHover ? "scale-105 ease-in-out duration-200" : ""}
-          src={isSpineProject ? spineThumnail : thumnailImage[0]}
+          src={isSpineProject ? spineThumnail[0] : thumnailImage[0]}
           alt="thumnail image"
           objectFit="cover"
           fill

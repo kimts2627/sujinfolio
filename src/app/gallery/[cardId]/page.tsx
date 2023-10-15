@@ -50,7 +50,7 @@ export default function GalleryDetail({
           src: IMAGE_BASE_PATH + imagePath,
         })) ?? [];
 
-  const isSpineProject = currentCard?.id === 6;
+  const isSpineProject = currentCard?.id === 7;
 
   if (!currentCard) return null;
 
