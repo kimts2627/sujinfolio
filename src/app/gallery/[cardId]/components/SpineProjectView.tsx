@@ -6,12 +6,11 @@ import type { Card } from "../../../../../types";
 
 type SpineProjectViewProps = {
   spineCard: Card;
-  titleIndex: number;
 };
 
 const SPINE_IMAGE_BASE_PATH = "/images/spine";
 
-const SpineProjectView = ({ spineCard, titleIndex }: SpineProjectViewProps) => {
+const SpineProjectView = ({ spineCard }: SpineProjectViewProps) => {
   const titles =
     typeof spineCard?.title === "string"
       ? [spineCard?.title]
@@ -31,11 +30,9 @@ const SpineProjectView = ({ spineCard, titleIndex }: SpineProjectViewProps) => {
     <main className="flex flex-1 flex-col gap-8 w-full border-y border-solid border-black min-h-full pb-6">
       <div className="flex flex-col gap-10 px-6 py-6">
         <div className="flex items-end">
-          <h1 className="text-6xl">
-            <TextTransition springConfig={presets.wobbly}>
-              {titles[titleIndex % titles.length]}
-            </TextTransition>
-          </h1>
+          <div className="flex flex-col">
+            <h1 className="text-6xl">{titles[1]}</h1>
+          </div>
         </div>
 
         <div className="flex gap-2">

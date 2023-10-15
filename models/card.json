@@ -59,20 +59,20 @@
   },
   {
     "id": 6,
-    "title": ["이전 회사 작업물"],
+    "title": ["Spine Project", "이전 회사 작업물"],
     "description": "전반적인 캐릭터 구상, 원화 작업, 리소스 제작과 리깅 및 모션제작 등을 진행했다.\n좌측부터 차례대로 idle > walk > attack > skill",
     "tags": ["Spine"],
     "spineImages": {
-      "hedgehog": ["/idle.gif", "/walk.gif", "/attack.gif" ],
-      "sparrow": ["/idle.gif", "/walk.gif", "/attack.gif" ],
-      "gorilla": ["/idle.gif", "/walk.gif", "/attack.gif" ],
-      "eagle": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
-      "elephant": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
-      "treeleader": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
-      "chui": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
-      "flameminister": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "dokkebiking": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
       "biyo": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
-      "dokkebiking": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ]
+      "flameminister": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "chui": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "treeleader": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "elephant": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "eagle": ["/idle.gif", "/walk.gif", "/attack.gif", "/skill.gif" ],
+      "gorilla": ["/idle.gif", "/walk.gif", "/attack.gif" ],
+      "sparrow": ["/idle.gif", "/walk.gif", "/attack.gif" ],
+      "hedgehog": ["/idle.gif", "/walk.gif", "/attack.gif" ]
     }
   }
 ]

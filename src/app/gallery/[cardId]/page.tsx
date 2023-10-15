@@ -8,8 +8,6 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Download from "yet-another-react-lightbox/plugins/download";
 import "yet-another-react-lightbox/styles.css";
 
-import TextTransition, { presets } from "react-text-transition";
-
 import cards from "../../../../models/card.json";
 import type { Card } from "../../../../types";
 import SpineProjectView from "./components/SpineProjectView";
@@ -23,7 +21,6 @@ export default function GalleryDetail({
 }) {
   const [openViewer, setOpenViewer] = useState(false);
   const [viewerGuide, setViewViewerGuide] = useState(false);
-  const [titleIndex, setTitleIndex] = useState(0);
 
   const cardList = cards as Card[];
 
@@ -55,18 +52,9 @@ export default function GalleryDetail({
 
   const isSpineProject = currentCard?.id === 6;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((titleIndex) => titleIndex + 1);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   if (!currentCard) return null;
 
-  if (isSpineProject)
-    return <SpineProjectView spineCard={currentCard} titleIndex={titleIndex} />;
+  if (isSpineProject) return <SpineProjectView spineCard={currentCard} />;
 
   return (
     <>
@@ -105,12 +93,9 @@ export default function GalleryDetail({
         </div>
 
         <div className="flex flex-col gap-10 px-6">
-          <div className="flex items-end">
-            <h1 className="text-6xl">
-              <TextTransition springConfig={presets.wobbly}>
-                {titles[titleIndex % titles.length]}
-              </TextTransition>
-            </h1>
+          <div className="flex flex-col">
+            <h1 className="text-6xl">{titles[1]}</h1>
+            <h5 className="pl-1 text-primary text-xl">{titles[0]}</h5>
           </div>
 
           <div className="flex gap-2">

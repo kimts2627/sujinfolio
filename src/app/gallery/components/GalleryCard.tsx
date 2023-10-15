@@ -21,7 +21,7 @@ const GalleryCard = ({ card }: GalleryCardProps) => {
 
   const isSpineProject = card.id === 6;
 
-  const cardTitle = typeof card.title === "string" ? card.title : card.title[0];
+  const cardTitle = typeof card.title === "string" ? card.title : card.title[1];
 
   const thumnailImage =
     typeof card?.images?.thumnail === "string"
